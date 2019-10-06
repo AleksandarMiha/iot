@@ -1,0 +1,68 @@
+<div class="wrapper">
+  <div class="row col-lg-6">
+
+    <div class="col-lg-12">
+
+        <div class="col-lg-12 padding-20" >
+          <h1>Add new sensor</h1>
+        </div>
+      <form [formGroup]="this.newesensorservice.form" (ngSubmit)="onSubmit()">
+        <input type="hidden" formControlName="$key">
+        <div class="form-group">
+          <label>Name:</label>
+          <input type="text" formControlName="name" class="form-control"
+            [ngClass]="{ 'is-invalid' :submitted && formControls.name.errors }">
+          <div class="invalid-feedback" *ngIf="submitted && formControls.name.errors">
+            Name is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <label> Path: </label>
+          <input type="text" formControlName="path" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && formControls.path.errors }">
+          <div class="invalid-feedback" *ngIf="submitted && formControls.path.errors">
+            Path is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <label> Unit Symbol: </label>
+          <input type="text" formControlName="unitSymbol" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && formControls.unitSymbol.errors }">
+          <div class="invalid-feedback" *ngIf="submitted && formControls.unitSymbol.errors">
+            Unit Symbol is required.
+          </div>
+          <!-- <div class="invalid-feedback" *ngIf="submitted && formControls.unitSymbol.minlength">
+          min 8.
+        </div> -->
+        </div>
+        <div class="form-group">
+          <label> Value: </label>
+          <input type="text" formControlName="value" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && formControls.value.errors }">
+          <div class="invalid-feedback" *ngIf="submitted && formControls.value.errors">
+            Value is required.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label> Last update: </label>
+          <input type="text" formControlName="lastUpdate" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && formControls.lastUpdate.errors }">
+          <div class="invalid-feedback" *ngIf="submitted && formControls.lastUpdate.errors">
+            Last update is required.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label> Type: </label>
+          <input type="text" formControlName="type" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && formControls.type.errors }">
+          <div class="invalid-feedback" *ngIf="submitted && formControls.type.errors">
+            Type is required.
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg">Submit </button>
+      </form>
+    </div>
+</div>
