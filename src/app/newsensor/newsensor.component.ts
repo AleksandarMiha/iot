@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { NewsensorserviceService } from '../servicesapi/newsensorservice.service';
+import { SensorService } from '../servicesapi/sensor.service';
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import { MatSnackBar } from "@angular/material";
+
 
 @Component({
   selector: 'app-newsensor',
@@ -8,27 +11,42 @@ import { NewsensorserviceService } from '../servicesapi/newsensorservice.service
   styleUrls: ['./newsensor.component.scss']
 })
 export class NewsensorComponent implements OnInit {
-  submitted: boolean;
-  formControls = this.newesensorservice.form.controls;
-  constructor(private newesensorservice: NewsensorserviceService,private router: Router) { }
+  addForm: FormGroup;
+  // submitted: boolean = false;
+  constructor(private formBuilder: FormBuilder,
+     private sensor: SensorService,
+     private router: Router,
+     public snackBar: MatSnackBar) { }
 
   ngOnInit() {
+    this.addForm = this.formBuilder.group({
+      id: [''],
+      name: ['', Validators.required],
+      image: [''],
+      path: ['', Validators.required],
+      unitSymbol: ['', Validators.required],
+      value: ['', Validators.required],
+      lastUpdate: ['', Validators.required],
+      type: ['', Validators.required],
+    });
   }
-
+  formControls() {return this.addForm.controls;}
   onSubmit(){
-    this.submitted = true;
-    // if(this.customerService.form.get("$key").value ==null) {
-    // }
-    if(this.newesensorservice.form.valid){
-      this.submitted = false;
-      this.router.navigateByUrl('/');
-      this.newesensorservice.form.reset();
-      console.log(this.newesensorservice.form)
-      // this.formControls.reset();
-      // Object.keys(this.customerService.form.controls).forEach(key => {
-      //   this.customerService.form.controls[key].setErrors(null)
-      // });
+  //   this.submitted = true;
+  //   if (this.addForm.invalid) {
+  //     return;
+  // }
+      this.sensor.createSensor(this.addForm.value)
+      .subscribe( data => {
+          this.snackBar.open("You have successfully installed a new sensor", null, {
+             duration: 5000,
+             verticalPosition: 'top',
+             horizontalPosition: 'right'
+          });
+        this.router.navigate(['/']);
+      });
+
+
     }
   }
 
-}

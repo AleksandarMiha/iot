@@ -7,16 +7,17 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class SensorService {
-  private _url: string = "../assets/db.json"
+  private _url: string = "http://localhost:3000/sensors"
   constructor(private http: HttpClient) { }
+
 
   getSensor(): Observable<ISensor[]>{
     return this.http.get<ISensor[]>(this._url);
   }
 
+  createSensor(isensor: ISensor): Observable<ISensor[]> {
+    return this.http.post<ISensor[]>(this._url, isensor);
+  }
+
+
 }
-
-
-// getE(): Observable<IEmployee[]>{
-//   return this.http.get<IEmployee[]>(this._url);
-// }

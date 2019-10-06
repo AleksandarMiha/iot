@@ -69,6 +69,46 @@
       "value": true,
       "lastUpdate": 1507211004000,
       "type": "ALARM"
+    },
+    {
+      "id": 8,
+      "name": "fsda",
+      "image": "",
+      "path": "",
+      "unitSymbol": "",
+      "value": "",
+      "lastUpdate": "",
+      "type": ""
+    },
+    {
+      "id": 9,
+      "name": "",
+      "image": "",
+      "path": "",
+      "unitSymbol": "",
+      "value": "",
+      "lastUpdate": "",
+      "type": ""
+    },
+    {
+      "id": 10,
+      "name": "",
+      "image": "",
+      "path": "",
+      "unitSymbol": "",
+      "value": "",
+      "lastUpdate": "",
+      "type": ""
+    },
+    {
+      "id": 11,
+      "name": "",
+      "image": "",
+      "path": "",
+      "unitSymbol": "",
+      "value": "",
+      "lastUpdate": "",
+      "type": ""
     }
   ]
 }

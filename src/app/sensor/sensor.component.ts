@@ -23,7 +23,7 @@ export class SensorComponent implements OnInit {
   getSensor() {
     this.sensor.getSensor().subscribe((data: any) => {
         // console.log(data.sensors)
-        this.sensorss = data.sensors;
+        this.sensorss = data;
         this.sortShow = true;
         this.display = false;
     }

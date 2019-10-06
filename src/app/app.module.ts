@@ -8,6 +8,8 @@ import { SensorComponent } from './sensor/sensor.component';
 import { SearchSensorPipe } from './sensor/search-sensor.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { NewsensorComponent } from './newsensor/newsensor.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule,MatSnackBarModule} from '@angular/material'
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { NewsensorComponent } from './newsensor/newsensor.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    MatButtonModule,MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
