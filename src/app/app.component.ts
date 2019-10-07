@@ -8,6 +8,6 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   router: string;
-  constructor(private _router: Router) {}
+  // constructor(private _router: Router) {}
   // title = 'wolkabout';
 }
