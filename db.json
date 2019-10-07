@@ -72,43 +72,13 @@
     },
     {
       "id": 8,
-      "name": "fsda",
-      "image": "",
-      "path": "",
-      "unitSymbol": "",
-      "value": "",
-      "lastUpdate": "",
-      "type": ""
-    },
-    {
-      "id": 9,
-      "name": "",
-      "image": "",
-      "path": "",
-      "unitSymbol": "",
-      "value": "",
-      "lastUpdate": "",
-      "type": ""
-    },
-    {
-      "id": 10,
-      "name": "",
-      "image": "",
-      "path": "",
-      "unitSymbol": "",
-      "value": "",
-      "lastUpdate": "",
-      "type": ""
-    },
-    {
-      "id": 11,
-      "name": "",
-      "image": "",
-      "path": "",
-      "unitSymbol": "",
-      "value": "",
-      "lastUpdate": "",
-      "type": ""
+      "name": "fds",
+      "image": "../assets/images/ico_alarm.svg",
+      "path": "fdsf",
+      "unitSymbol": "fsdfsd",
+      "value": "fsdf",
+      "lastUpdate": "sdfds",
+      "type": "fdsfds"
     }
   ]
 }

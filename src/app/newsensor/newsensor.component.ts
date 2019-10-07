@@ -12,7 +12,7 @@ import { MatSnackBar } from "@angular/material";
 })
 export class NewsensorComponent implements OnInit {
   addForm: FormGroup;
-  // submitted: boolean = false;
+  submitted: boolean = false;
   constructor(private formBuilder: FormBuilder,
      private sensor: SensorService,
      private router: Router,
@@ -21,21 +21,21 @@ export class NewsensorComponent implements OnInit {
   ngOnInit() {
     this.addForm = this.formBuilder.group({
       id: [''],
-      name: ['', Validators.required],
-      image: [''],
+      name:['', Validators.required],
+      image: ['../assets/images/ico_alarm.svg'],
       path: ['', Validators.required],
       unitSymbol: ['', Validators.required],
       value: ['', Validators.required],
       lastUpdate: ['', Validators.required],
-      type: ['', Validators.required],
+      type: ['', Validators.required]
     });
   }
-  formControls() {return this.addForm.controls;}
+  get f() { return this.addForm.controls; }
   onSubmit(){
-  //   this.submitted = true;
-  //   if (this.addForm.invalid) {
-  //     return;
-  // }
+    this.submitted = true;
+    if (this.addForm.invalid) {
+      return;
+  }
       this.sensor.createSensor(this.addForm.value)
       .subscribe( data => {
           this.snackBar.open("You have successfully installed a new sensor", null, {
