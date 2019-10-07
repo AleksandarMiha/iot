@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SensorService } from '../servicesapi/sensor.service';
+import { ISensor } from './sensor';
 
 @Component({
   selector: 'app-sensor',
@@ -17,7 +18,6 @@ export class SensorComponent implements OnInit {
   ngOnInit() {
     this.getSensor();
     this.display = true;
-    // this.sortAsc();
   }
 
   getSensor() {
@@ -30,7 +30,6 @@ export class SensorComponent implements OnInit {
 
        )
   }
-  // this._employeeService.getE().subscribe(data => this.employees = data);
 
   sortAsc() {
     this.sensor.getSensor().subscribe(
@@ -43,8 +42,22 @@ export class SensorComponent implements OnInit {
          console.log("Sorted asc sensors" , this.sensorss)
          this.sortShow = false;
       },
+
       err => console.log(err)
     )
   }
+
+  deleteSensor(id): void {
+    if(window.confirm('Are sure you want to delete this sensor ?')){
+      console.log(id);
+      this.sensor.deleteSensor(id)
+        .subscribe( data => {
+          // this.sensorss = this.sensorss.filter((u:any) => u !== id);
+          this.sensorss.slice(id,1);
+          this.getSensor();
+        })
+     }
+
+  };
 
 }

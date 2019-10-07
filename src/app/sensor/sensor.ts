@@ -1,5 +1,5 @@
 export interface ISensor{
-  sensors: {
+  // sensors: {
     id: number,
     name: string,
     path: string,
@@ -7,6 +7,6 @@ export interface ISensor{
     value: string
     lastUpdate: number
     type: string
-  }
+  // }
 
 }

@@ -1,5 +1,8 @@
-<div class="form-group col-md-12 p-5">
-  <input type="text" class="form-control" placeholder="Search the name of the sensor..." [(ngModel)]="searchTerm">
+<div class="form-group col-md-12 col-lg-12 p-3">
+  <!-- <input type="text" class="form-control" placeholder="Search the name of the sensor..." [(ngModel)]="searchTerm"> -->
+  <mat-form-field class="example-full-width col-md-12 col-lg-12">
+      <input matInput placeholder="Search the name of the sensor..."  [(ngModel)]="searchTerm">
+    </mat-form-field>
 </div>
 <div class="sort-holder">
   <div (click)="sortAsc()" *ngIf="sortShow === true;">
@@ -35,8 +38,17 @@
         <p>{{ item.unitSymbol }}</p>
       </div>
     </div>
+    <div class="edit-button-holder">
+      <button class="btn btn btn-outline-primary mr-lg-2">Edit</button>
+
+    </div>
+    <div class="delete-button-holder">
+        <button class="btn btn btn-danger" (click)="deleteSensor(item.id)">&#10005;</button>
+    </div>
+
   </div>
-  <div *ngIf="(sensorss | searchSensor: searchTerm).length == 0" class="holder-message__spinner">
+
+  <div *ngIf="(sensorss | searchSensor: searchTerm).length === 0" class="holder-message__spinner">
     <h2>Ooooops no results</h2>
   </div>
 

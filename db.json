@@ -69,16 +69,6 @@
       "value": true,
       "lastUpdate": 1507211004000,
       "type": "ALARM"
-    },
-    {
-      "id": 8,
-      "name": "fds",
-      "image": "../assets/images/ico_alarm.svg",
-      "path": "fdsf",
-      "unitSymbol": "fsdfsd",
-      "value": "fsdf",
-      "lastUpdate": "sdfds",
-      "type": "fdsfds"
     }
   ]
 }
