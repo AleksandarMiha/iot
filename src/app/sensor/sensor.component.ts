@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SensorService } from '../servicesapi/sensor.service';
-import { ISensor } from './sensor';
+import { MatSnackBar } from "@angular/material";
+import { Router } from '@angular/router';
+import { AlertService } from '../service-notification/alert.service';
 
 @Component({
   selector: 'app-sensor',
@@ -13,7 +15,11 @@ export class SensorComponent implements OnInit {
   display: boolean = false;
   sortShow: boolean = true;
 
-  constructor(private sensor: SensorService) { }
+  constructor(private sensor: SensorService, public snackBar: MatSnackBar, private router: Router, private showMessageAlert: AlertService) { }
+
+  ngOnChanges() {
+    this.sensorss
+  }
 
   ngOnInit() {
     this.getSensor();
@@ -26,9 +32,7 @@ export class SensorComponent implements OnInit {
         this.sensorss = data;
         this.sortShow = true;
         this.display = false;
-    }
-
-       )
+    })
   }
 
   sortAsc() {
@@ -42,22 +46,26 @@ export class SensorComponent implements OnInit {
          console.log("Sorted asc sensors" , this.sensorss)
          this.sortShow = false;
       },
-
       err => console.log(err)
     )
   }
 
-  deleteSensor(id): void {
+  deleteSensor(id: number): void {
     if(window.confirm('Are sure you want to delete this sensor ?')){
-      console.log(id);
       this.sensor.deleteSensor(id)
         .subscribe( data => {
           // this.sensorss = this.sensorss.filter((u:any) => u !== id);
           this.sensorss.slice(id,1);
+          this.showMessageAlert.showDeleteAlert();
           this.getSensor();
-        })
+        }), err => {
+          this.showMessageAlert.showErrorAlert()
+        }
      }
+  };
 
+  editSensor(id: number): void {
+     this.router.navigate(['/edit', id])
   };
 
 }

@@ -1,17 +1,16 @@
 <div class="form-group col-md-12 col-lg-12 p-3">
-  <!-- <input type="text" class="form-control" placeholder="Search the name of the sensor..." [(ngModel)]="searchTerm"> -->
   <mat-form-field class="example-full-width col-md-12 col-lg-12">
-      <input matInput placeholder="Search the name of the sensor..."  [(ngModel)]="searchTerm">
-    </mat-form-field>
+    <input matInput placeholder="Search the name of the sensor..." [(ngModel)]="searchTerm">
+  </mat-form-field>
 </div>
 <div class="sort-holder">
   <div (click)="sortAsc()" *ngIf="sortShow === true;">
-    <button type="button" class="btn btn-outline-primary">Sort by asc</button>
+    <button mat-stroked-button color="primary">Sort by asc</button>
   </div>
   <div (click)="getSensor()" *ngIf="sortShow === false;">
-    <button type="button" class="btn btn-outline-primary"> Back to the unsorted sensor </button>
-  </div>
+    <button mat-stroked-button color="primary">Back to the unsorted sensor</button>
 
+  </div>
   <div>
   </div>
 </div>
@@ -21,11 +20,7 @@
       <span class="sr-only">Loading...</span>
     </div>
   </div>
-
-  <!-- <ng-container> -->
-
   <div class="box" *ngFor="let item of sensorss | searchSensor:searchTerm ">
-
     <div>
       <h4> {{ item.name }} </h4>
       <p class="temp-demo">{{ item.path }}</p>
@@ -34,29 +29,21 @@
     <div class="box__bottom-holder">
       <div><img [src]="'../assets/' + item.image"> </div>
       <div>
-        <h4> {{  item.value   }}</h4>
+        <h4> {{ item.value }}</h4>
         <p>{{ item.unitSymbol }}</p>
       </div>
     </div>
-    <div class="edit-button-holder">
-      <button class="btn btn btn-outline-primary mr-lg-2">Edit</button>
-
+    <div class="edit-button-holder" routerLink="/edit">
+      <button mat-raised-button color="primary" (click)="editSensor(item.id)">Edit</button>
     </div>
     <div class="delete-button-holder">
-        <button class="btn btn btn-danger" (click)="deleteSensor(item.id)">&#10005;</button>
+      <button class="btn btn btn-danger btn-sm" (click)="deleteSensor(item.id)">&#10005;</button>
     </div>
-
   </div>
-
-  <div *ngIf="(sensorss | searchSensor: searchTerm).length === 0" class="holder-message__spinner">
+  <div *ngIf="(sensorss | searchSensor: searchTerm).length === 0 && display === false" class="holder-message__spinner">
     <h2>Ooooops no results</h2>
   </div>
-
   <div class="box new-card__box" routerLink="/newsensor">
     <h2>Add new card</h2>
   </div>
-
-
-
-
 </div>

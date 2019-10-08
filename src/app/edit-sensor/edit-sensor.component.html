@@ -1,0 +1,45 @@
+<div class="wrapper">
+  <div class="row col-lg-10">
+  <h1>Update sensor</h1>
+    <div class="col-lg-10">
+
+<div [hidden]="submitted" >
+  <form (ngSubmit)="onSubmit()">
+    <div class="example-container">
+    <mat-form-field>
+      <input matInput placeholder="Name"  type="text" id="name" required [(ngModel)]="sens.name" name="name">
+      <div class="invalid-feedback" *ngIf="submitted && f.name.errors">
+        Name is required.
+      </div>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Path"  type="text" id="path" required [(ngModel)]="sens.path" name="path">
+      <div class="invalid-feedback" *ngIf="submitted && f.path.errors">
+        Path is required.
+      </div>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Type"  type="text" id="type" required [(ngModel)]="sens.type" name="type">
+      <div class="invalid-feedback" *ngIf="submitted && f.type.errors">
+        Type is required.
+      </div>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Unit Symbol"  type="text" id="unitSymbol" required [(ngModel)]="sens.unitSymbol" name="unitSymbol">
+      <div class="invalid-feedback" *ngIf="submitted && f.unitSymbol.errors">
+        Unit Symbol is required.
+      </div>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Value"  type="text" id="value" required [(ngModel)]="sens.value" name="value">
+      <div class="invalid-feedback" *ngIf="submitted && f.value.errors">
+        Value required.
+      </div>
+    </mat-form-field>
+  </div>
+    <button type="submit" mat-raised-button color="primary">Submit</button>
+
+  </form>
+</div>
+</div>
+</div>

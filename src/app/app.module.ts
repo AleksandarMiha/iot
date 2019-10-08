@@ -9,14 +9,17 @@ import { SearchSensorPipe } from './sensor/search-sensor.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { NewsensorComponent } from './newsensor/newsensor.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule,MatSnackBarModule, MatInputModule} from '@angular/material'
+import {MatButtonModule,MatSnackBarModule, MatInputModule, MatSelectModule} from '@angular/material';
+import { EditSensorComponent } from './edit-sensor/edit-sensor.component'
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
     AppComponent,
     SensorComponent,
     SearchSensorPipe,
-    NewsensorComponent
+    NewsensorComponent,
+    EditSensorComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +28,7 @@ import {MatButtonModule,MatSnackBarModule, MatInputModule} from '@angular/materi
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatButtonModule,MatSnackBarModule, MatInputModule
+    MatButtonModule,MatSnackBarModule, MatInputModule, MatFormFieldModule, MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

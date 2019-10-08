@@ -1,68 +1,44 @@
 <div class="wrapper">
-  <div class="row col-lg-6">
-
-    <div class="col-lg-12">
-
-        <div class="col-lg-12 padding-20" >
-          <h1>Add new sensor</h1>
+  <div class="row col-lg-8">
+     <h1>Add new sensor</h1>
+     <div class="col-lg-10">
+        <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+        <div class="example-container">
+           <mat-form-field>
+              <input matInput placeholder="Name" type="text" formControlName="name"
+                 [ngClass]="{ 'is-invalid' :submitted && f.name.errors }">
+              <div class="invalid-feedback" *ngIf="submitted && f.name.errors">
+                 Name is required.
+              </div>
+           </mat-form-field>
+           <mat-form-field>
+              <input matInput placeholder="Path" type="text" formControlName="path"
+                 [ngClass]="{ 'is-invalid': submitted && f.path.errors }">
+              <div class="invalid-feedback" *ngIf="submitted && f.path.errors">
+                 Path is required.
+              </div>
+           </mat-form-field>
+           <mat-form-field>
+              <mat-select placeholder="Unit Symbol" formControlName="unitSymbol">
+                 <mat-option value="mb">mb</mat-option>
+                 <mat-option value="count">count</mat-option>
+                 <mat-option value="%">%</mat-option>
+                 <mat-option value="℃">℃</mat-option>
+              </mat-select>
+           </mat-form-field>
+           <mat-form-field>
+              <input matInput placeholder="Value" type="text" formControlName="value">
+           </mat-form-field>
+           <mat-form-field>
+              <mat-select placeholder="Type" formControlName="type">
+                 <mat-option value="FEED">FEED </mat-option>
+                 <mat-option value="ACTUATOR">ACTUATOR</mat-option>
+                 <mat-option value="ALARM">ALARM</mat-option>
+              </mat-select>
+           </mat-form-field>
         </div>
-      <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
-        <!-- <input type="hidden" formControlName="$key"> -->
-        <div class="form-group">
-          <label>Name:</label>
-          <input type="text" formControlName="name" class="form-control"
-            [ngClass]="{ 'is-invalid' :submitted && f.name.errors }">
-          <div class="invalid-feedback" *ngIf="submitted && f.name.errors">
-            Name is required.
-          </div>
-        </div>
-        <div class="form-group">
-          <label> Path: </label>
-          <input type="text" formControlName="path" class="form-control"
-            [ngClass]="{ 'is-invalid': submitted && f.path.errors }">
-          <div class="invalid-feedback" *ngIf="submitted && f.path.errors">
-            Path is required.
-          </div>
-        </div>
-        <div class="form-group">
-          <label> Unit Symbol: </label>
-          <input type="text" formControlName="unitSymbol" class="form-control"
-            [ngClass]="{ 'is-invalid': submitted && f.unitSymbol.errors }">
-          <div class="invalid-feedback" *ngIf="submitted && f.unitSymbol.errors">
-            Unit Symbol is required.
-          </div>
-          <!-- <div class="invalid-feedback" *ngIf="submitted && formControls.unitSymbol.minlength">
-          min 8.
-        </div> -->
-        </div>
-        <div class="form-group">
-          <label> Value: </label>
-          <input type="text" formControlName="value" class="form-control"
-            [ngClass]="{ 'is-invalid': submitted && f.value.errors }">
-          <div class="invalid-feedback" *ngIf="submitted && f.value.errors">
-            Value is required.
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label> Last update: </label>
-          <input type="text" formControlName="lastUpdate" class="form-control"
-            [ngClass]="{ 'is-invalid': submitted && f.lastUpdate.errors }">
-          <div class="invalid-feedback" *ngIf="submitted && f.lastUpdate.errors">
-            Last update is required.
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label> Type: </label>
-          <input type="text" formControlName="type" class="form-control"
-            [ngClass]="{ 'is-invalid': submitted && f.type.errors }">
-          <div class="invalid-feedback" *ngIf="submitted && f.type.errors">
-            Type is required.
-          </div>
-        </div>
-
-        <button type="submit" class="btn btn-primary btn-lg"  >Submit </button>
-      </form>
-    </div>
+        <button type="submit" mat-raised-button color="primary" >Submit</button>
+        </form>
+     </div>
+  </div>
 </div>
