@@ -2,49 +2,59 @@
   "sensors": [
     {
       "id": 0,
-      "name": "Temperaturedsadsad22",
-      "image": "../assets/images/ico_alarm.svg",
-      "path": "",
-      "unitSymbol": "",
-      "value": "",
-      "lastUpdate": "10/8/2019",
-      "type": ""
+      "name": "Temperature",
+      "image": "images/ico_temperature.svg",
+      "path": "DemoDevice/Temperature",
+      "unitSymbol": "℃",
+      "value": "31.8",
+      "lastUpdate": 1530045809121,
+      "type": "FEED"
     },
     {
       "id": 1,
-      "name": "Humidity5",
-      "image": "../assets/images/ico_alarm.svg",
-      "path": "dsa",
-      "unitSymbol": "dsadasdas",
-      "value": "dsa",
-      "lastUpdate": "10/8/2019",
-      "type": "dsadsa"
+      "name": "Humidity",
+      "image": "images/ico_humidity.svg",
+      "path": "DemoDevice/Humidity",
+      "unitSymbol": "%",
+      "value": "43.23",
+      "lastUpdate": 1507211004000,
+      "type": "FEED"
+    },
+    {
+      "id": 2,
+      "name": "Pressure",
+      "image": "images/ico_pressure.svg",
+      "path": "DemoDevice/Pressure",
+      "unitSymbol": "mb",
+      "value": "1003.4",
+      "lastUpdate": 1507211004000,
+      "type": "FEED"
     },
     {
       "id": 4,
       "name": "Light",
-      "image": "../assets/images/ico_alarm.svg",
-      "path": "DemoDevice/Light2",
-      "unitSymbol": "2",
-      "value": "22",
-      "lastUpdate": "10/8/2019",
-      "type": ""
+      "image": "images/ico_switcher.svg",
+      "path": "DemoDevice/Light",
+      "unitSymbol": null,
+      "value": false,
+      "lastUpdate": 1505819296000,
+      "type": "ACTUATOR"
     },
     {
       "id": 5,
-      "name": "dasd",
-      "image": "../assets/images/ico_alarm.svg",
-      "path": "dsad",
-      "unitSymbol": "asdsad",
-      "value": "sadsadsa",
-      "lastUpdate": "10/8/2019",
-      "type": "sadasd"
+      "name": "Count",
+      "image": "images/ico_slider.svg",
+      "path": "DemoDevice/Count",
+      "unitSymbol": "count",
+      "value": "+76",
+      "lastUpdate": 1505819296000,
+      "type": "ACTUATOR"
     },
     {
       "id": 6,
       "name": "Highway board",
       "image": "images/ico_string.svg",
-      "path": "DemoDevice/Light55",
+      "path": "DemoDevice/Light",
       "unitSymbol": null,
       "value": "Drive carefully someone loves you",
       "lastUpdate": 1505819296000,
@@ -55,20 +65,20 @@
       "name": "High Humidity",
       "image": "images/ico_alarm.svg",
       "path": "DemoDevice/High Humidity",
-      "unitSymbol": "%",
-      "value": "54",
-      "lastUpdate": "r",
+      "unitSymbol": null,
+      "value": true,
+      "lastUpdate": 1507211004000,
       "type": "ALARM"
     },
     {
-      "id": 9,
-      "name": "aca2",
-      "image": "../assets/images/ico_alarm.svg",
-      "path": "dasd",
-      "unitSymbol": "%",
-      "value": "sdasdas2",
-      "lastUpdate": "10/8/2019",
-      "type": "ACTUATOR"
+      "id": "8",
+      "name": "dsa",
+      "image": "dasd",
+      "path": "asd",
+      "unitSymbol": "sada",
+      "value": "sdsad",
+      "lastUpdate": "dsad",
+      "type": "das"
     }
   ]
 }

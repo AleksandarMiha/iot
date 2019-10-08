@@ -12,6 +12,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule,MatSnackBarModule, MatInputModule, MatSelectModule} from '@angular/material';
 import { EditSensorComponent } from './edit-sensor/edit-sensor.component'
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatTableModule} from '@angular/material/table';
+import { TableGridComponent } from './table-grid/table-grid.component'
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     SensorComponent,
     SearchSensorPipe,
     NewsensorComponent,
-    EditSensorComponent
+    EditSensorComponent,
+    TableGridComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatButtonModule,MatSnackBarModule, MatInputModule, MatFormFieldModule, MatSelectModule
+    MatButtonModule,MatSnackBarModule, MatInputModule, MatFormFieldModule, MatSelectModule, MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

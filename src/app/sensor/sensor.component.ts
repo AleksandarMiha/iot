@@ -14,6 +14,7 @@ export class SensorComponent implements OnInit {
   searchTerm: string;
   display: boolean = false;
   sortShow: boolean = true;
+  content:string = "box";
 
   constructor(private sensor: SensorService, public snackBar: MatSnackBar, private router: Router, private showMessageAlert: AlertService) { }
 
