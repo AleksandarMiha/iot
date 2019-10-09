@@ -11,7 +11,7 @@ import { pipe } from 'rxjs';
   providedIn: 'root'
 })
 export class SensorService {
-  private _url: string = "http://localhost:3000/sensors"
+  private _url: string = "https://dbapiiot.herokuapp.com/sensors"
   public httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json'
@@ -21,7 +21,7 @@ export class SensorService {
 
 
   getSensor(): Observable<ISensor[]>{
-    return this.http.get<ISensor[]>(this._url).pipe(delay(500));
+    return this.http.get<ISensor[]>(this._url, this.httpOptions).pipe(delay(500));
   }
 
   getSingleSensor(id: number): Observable<any> {
