@@ -9,7 +9,7 @@ import { SearchSensorPipe } from './sensor/search-sensor.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { NewsensorComponent } from './newsensor/newsensor.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule,MatSnackBarModule, MatInputModule, MatSelectModule} from '@angular/material';
+import {MatButtonModule,MatSnackBarModule, MatInputModule, MatSelectModule, MatSortModule, MatPaginatorModule} from '@angular/material';
 import { EditSensorComponent } from './edit-sensor/edit-sensor.component'
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTableModule} from '@angular/material/table';
@@ -31,7 +31,7 @@ import { TableGridComponent } from './table-grid/table-grid.component'
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatButtonModule,MatSnackBarModule, MatInputModule, MatFormFieldModule, MatSelectModule, MatTableModule
+    MatButtonModule,MatSnackBarModule, MatInputModule, MatFormFieldModule, MatSelectModule, MatTableModule, MatSortModule, MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
